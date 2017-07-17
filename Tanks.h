@@ -1,4 +1,4 @@
-//Gustavo San Martin ICS3I 2015
+//Gustavo San Martin ICS3U 2015
 #include <allegro.h>
 #include <alfont.h>
 #include <stdio.h>
