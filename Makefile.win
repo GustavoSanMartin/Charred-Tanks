@@ -1,0 +1,45 @@
+# Project: CharredTanks
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = Calculations.o Main.o AI.o User.o Multiplayer.o screen.o $(RES)
+LINKOBJ  = Calculations.o Main.o AI.o User.o Multiplayer.o screen.o $(RES)
+LIBS =  -L"D:/Dev-Cpp/lib" -lalfont -lalleg  
+INCS =  -I"D:/Dev-Cpp/include" 
+CXXINCS =  -I"D:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"D:/Dev-Cpp/include/c++/3.4.2/backward"  -I"D:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"D:/Dev-Cpp/include/c++/3.4.2"  -I"D:/Dev-Cpp/include" 
+BIN  = "Charred Tanks.exe"
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before "Charred Tanks.exe" all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "Charred Tanks.exe" $(LIBS)
+
+Calculations.o: Calculations.cpp
+	$(CPP) -c Calculations.cpp -o Calculations.o $(CXXFLAGS)
+
+Main.o: Main.cpp
+	$(CPP) -c Main.cpp -o Main.o $(CXXFLAGS)
+
+AI.o: AI.cpp
+	$(CPP) -c AI.cpp -o AI.o $(CXXFLAGS)
+
+User.o: User.cpp
+	$(CPP) -c User.cpp -o User.o $(CXXFLAGS)
+
+Multiplayer.o: Multiplayer.cpp
+	$(CPP) -c Multiplayer.cpp -o Multiplayer.o $(CXXFLAGS)
+
+screen.o: screen.cpp
+	$(CPP) -c screen.cpp -o screen.o $(CXXFLAGS)
